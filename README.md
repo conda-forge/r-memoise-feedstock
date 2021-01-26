@@ -5,11 +5,9 @@ Home: https://github.com/hadley/memoise
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-memoise-feedstock/blob/master/LICENSE.txt)
 
 Summary: Cache the results of a function so that when you call it again with the same arguments it returns the pre-computed value.
-
-
 
 Current build status
 ====================
