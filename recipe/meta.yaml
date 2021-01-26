@@ -1,4 +1,4 @@
-{% set version = '1.1.0' %}
+{% set version = "2.0.0" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,12 +12,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/memoise_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/memoise/memoise_{{ version }}.tar.gz
-  sha256: b276f9452a26aeb79e12dd7227fcc8712832781a42f92d70e86040da0573980c
+  sha256: ff9ae3a1a95ad6271d98e6eca016768b790e44bd613356b8e86b685aefd9ecaf
 
 build:
   noarch: generic
-  merge_build_host: True  # [win]
-  number: 1004
+  merge_build_host: true  # [win]
+  number: 0
 
   rpaths:
     - lib/R/lib/
@@ -41,12 +41,11 @@ test:
 about:
   home: https://github.com/hadley/memoise
   license: MIT
-  summary: Cache the results of a function so that when you call it again with the same arguments
-    it returns the pre-computed value.
+  summary: Cache the results of a function so that when you call it again with the same arguments it returns the pre-computed value.
   license_family: MIT
-  license_file: 
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
-    - LICENSE  
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - LICENSE
 
 extra:
   recipe-maintainers:
