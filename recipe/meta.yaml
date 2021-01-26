@@ -1,5 +1,4 @@
 {% set version = "2.0.0" %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,17 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: memoise_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/memoise_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/memoise/memoise_{{ version }}.tar.gz
   sha256: ff9ae3a1a95ad6271d98e6eca016768b790e44bd613356b8e86b685aefd9ecaf
 
 build:
-  noarch: generic
   merge_build_host: true  # [win]
   number: 0
-
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -28,10 +25,12 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-digest >=0.6.3
+    - r-cachem
+    - r-rlang >=0.4.10
   run:
     - r-base
-    - r-digest >=0.6.3
+    - r-cachem
+    - r-rlang >=0.4.10
 
 test:
   commands:
@@ -50,9 +49,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
