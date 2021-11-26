@@ -1,4 +1,4 @@
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/memoise_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/memoise/memoise_{{ version }}.tar.gz
-  sha256: ff9ae3a1a95ad6271d98e6eca016768b790e44bd613356b8e86b685aefd9ecaf
+  sha256: f85034ee98c8ca07fb3cd826142c1cd1e1e5747075a94c75a45783bbc4fe2deb
 
 build:
   merge_build_host: true  # [win]
